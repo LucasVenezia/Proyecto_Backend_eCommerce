@@ -31,7 +31,7 @@ const addProduct = (req, res) => {
     const cart = Cart.find(req.params.id)
     const product = Product.find(req.params.product_id)
 
-    cart.products.push(product)
+    cart.products.push(product.id)
 
     Cart.update(req.params.id, { products: cart.products })
     
